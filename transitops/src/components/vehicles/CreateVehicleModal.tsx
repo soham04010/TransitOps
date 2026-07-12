@@ -34,7 +34,7 @@ export function CreateVehicleModal({ isOpen, onClose }: CreateVehicleModalProps)
       }
       return json.data;
     },
-    onSuccess: (newVeh) => {
+    onSuccess: (newVeh: { registrationNumber: any; }) => {
       toast.success(`Vehicle registered (${newVeh.registrationNumber}) successfully!`);
       queryClient.invalidateQueries({ queryKey: ["vehicles"] });
       queryClient.invalidateQueries({ queryKey: ["dashboard"] });

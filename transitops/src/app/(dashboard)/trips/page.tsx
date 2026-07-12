@@ -22,9 +22,9 @@ export default function TripsPage() {
 
   const { data: allTrips = [] } = useTrips();
 
-  const draftCount = allTrips.filter((t) => t.status === "draft").length;
-  const dispatchedCount = allTrips.filter((t) => t.status === "dispatched").length;
-  const completedCount = allTrips.filter((t) => t.status === "completed").length;
+  const draftCount = allTrips.filter((t: { status: string; }) => t.status === "draft").length;
+  const dispatchedCount = allTrips.filter((t: { status: string; }) => t.status === "dispatched").length;
+  const completedCount = allTrips.filter((t: { status: string; }) => t.status === "completed").length;
 
   return (
     <div className="space-y-8 font-sans">
